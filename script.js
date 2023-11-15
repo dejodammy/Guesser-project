@@ -12,8 +12,8 @@ function startGame() {
     document.getElementById("message").innerText = "";
     document.getElementById("range").innerText = "";
     document.getElementById("user-input").value = "";
-    document.getElementById("user-input").style.display = "inline-block";  // Reset the display style
-    document.getElementById("submit-button").style.display = "inline-block";  // Reset the display style
+    document.getElementById("user-input").style.display = "inline-block";  
+    document.getElementById("submit-button").style.display = "inline-block";  
     document.getElementById("guesses-left").innerText = `Guesses left: ${guesses}`;
     document.querySelector("button").style.display = "none";
     
@@ -55,9 +55,8 @@ function checkGuess() {
                 document.getElementById("message").innerText = `Wrong guess! Try again. You have ${guessesLeft} guess(es) left.`;
 
                 if (guessesLeft === 0) {
-                    document.getElementById("message").innerText = "You ran out of chances. GG's!";
+                    document.getElementById("message").innerText = `You ran out of chances. GG's!t \n the number was ${value} `;
                     document.getElementById("guesses-left").innerText = "";
-
                     document.getElementById("user-input").style.display = "none";
                     document.getElementById("submit-button").style.display = "none";
                 } else {
