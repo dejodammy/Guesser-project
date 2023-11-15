@@ -10,16 +10,16 @@
     <div class="container">
       <h1>Guessing Game</h1>
       <p>This is a guessing game where the value ranges from 1 to 10.</p>
-      <button onclick="startGame()">Start Game</button>
+      <button id="start-game"  class="default-btn"  onclick="startGame()">Start Game</button>
       <div id="game-container" style="display: none">
         <p id="message"></p>
         <p id="range"></p>
         <input type="number" id="user-input" placeholder="Enter your guess" onkeydown="handleEnter(event)"/>
-        <button onclick="checkGuess(); hiOrLow();">Submit Guess</button>
+        <button id="submit-button"  class="default-btn" onclick="checkGuess(); hiOrLow();">Submit Guess</button>
         <p id="guesses-left"></p>
+        <button id="play-again" class="default-btn" onclick="startGame()" >Play Again</button>
       </div>
 
-      <button onclick="playAgain()" style="display: none">Play Again</button>
     </div>
     <script src="script.js"></script>
   </body>

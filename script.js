@@ -6,14 +6,18 @@ function startGame() {
     numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     shuffleArray(numbers);
     value = getRandomValue(numbers);
-    guesses = 3; // Set the maximum number of guesses
+    guesses = 3; 
 
     document.getElementById("game-container").style.display = "block";
     document.getElementById("message").innerText = "";
     document.getElementById("range").innerText = "";
     document.getElementById("user-input").value = "";
+    document.getElementById("user-input").style.display = "inline-block";  // Reset the display style
+    document.getElementById("submit-button").style.display = "inline-block";  // Reset the display style
     document.getElementById("guesses-left").innerText = `Guesses left: ${guesses}`;
     document.querySelector("button").style.display = "none";
+    
+
 }
 
 function hiOrLow() {
@@ -42,7 +46,10 @@ function checkGuess() {
             if (userGuess === value) {
                 document.getElementById("message").innerText = "You got the correct value! Hurray!";
                 document.getElementById("guesses-left").innerText = "";
-                document.querySelector("button").style.display = "block";
+                document.getElementById("user-input").style.display = "none";
+                document.getElementById("submit-button").style.display = "none";
+
+             
             } else {
                 const guessesLeft = guesses;
                 document.getElementById("message").innerText = `Wrong guess! Try again. You have ${guessesLeft} guess(es) left.`;
@@ -50,7 +57,9 @@ function checkGuess() {
                 if (guessesLeft === 0) {
                     document.getElementById("message").innerText = "You ran out of chances. GG's!";
                     document.getElementById("guesses-left").innerText = "";
-                    document.querySelector("button").style.display = "block";
+
+                    document.getElementById("user-input").style.display = "none";
+                    document.getElementById("submit-button").style.display = "none";
                 } else {
                     document.getElementById("guesses-left").innerText = `Guesses left: ${guessesLeft}`;
                 }
@@ -61,9 +70,7 @@ function checkGuess() {
     }
 }
 
-function playAgain() {
-    startGame();
-}
+
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
